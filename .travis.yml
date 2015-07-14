@@ -21,5 +21,6 @@ install:
 script:
     # run a printer task to keep travis from terminating static analysis
     - 'while true; do echo "(waiting)"; sleep 60; done &'
+    - xcodebuild -showsdks
     - rake $TASK
     - kill %1
