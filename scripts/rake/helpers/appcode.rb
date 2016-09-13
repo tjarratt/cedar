@@ -5,6 +5,7 @@ class AppCode
     possible_appcode_directories(root_dir: root_dir).each do |full_snippets_dir|
       full_snippets_filepath = File.join(full_snippets_dir, APPCODE_SNIPPETS_FILENAME)
 
+      Shell.run %{mkdir -p "#{full_snippets_dir}"}
       Shell.run %{cp "#{APPCODE_SNIPPETS_FILE}" "#{full_snippets_filepath}"}
     end
   end
